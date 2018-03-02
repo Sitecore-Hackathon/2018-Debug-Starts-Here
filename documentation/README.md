@@ -6,6 +6,12 @@ You can find a very good reference to Github flavoured markdown reference in [th
 
 Examples of things to include are the following.
 
+## Team
+
+- Dylan Young
+- Bhavesh Maniya
+- Nisha Magnani
+
 ## Summary
 
 **Category:** Hackathon Category
