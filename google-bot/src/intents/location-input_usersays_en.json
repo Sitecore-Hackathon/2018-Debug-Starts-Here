@@ -1,0 +1,56 @@
+[
+  {
+    "id": "467dc31f-2d7c-4139-b8c0-ca4ea7a6ef58",
+    "data": [
+      {
+        "text": "$ZipCode",
+        "alias": "ZipCode",
+        "meta": "@sys.zip-code",
+        "userDefined": true
+      },
+      {
+        "text": " is my zip code",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1520067173
+  },
+  {
+    "id": "4a26a1fb-97d1-4c56-af50-d113c35d2ffd",
+    "data": [
+      {
+        "text": "Zip is ",
+        "userDefined": false
+      },
+      {
+        "text": "$ZipCode",
+        "alias": "ZipCode",
+        "meta": "@sys.zip-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1520067173
+  },
+  {
+    "id": "fe5f6676-9a5c-46aa-b1bd-ac11a0b70522",
+    "data": [
+      {
+        "text": "My zip code is ",
+        "userDefined": false
+      },
+      {
+        "text": "$ZipCode",
+        "alias": "ZipCode",
+        "meta": "@sys.zip-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1520067173
+  }
+]

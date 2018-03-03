@@ -1,0 +1,43 @@
+{
+  "id": "ab348930-dbf9-4881-8cea-bd8504da893d",
+  "name": "pick-restaurant",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "3693b0d8-81f7-42ca-9d7b-8515b70bced4",
+          "required": true,
+          "dataType": "@restaurant-types",
+          "name": "restaurant-types",
+          "value": "$restaurant-types",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Please define a restaurant type (ie. Italian)?"
+            }
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Okay, what is your Address?"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1520070460,
+  "fallbackIntent": false,
+  "events": []
+}

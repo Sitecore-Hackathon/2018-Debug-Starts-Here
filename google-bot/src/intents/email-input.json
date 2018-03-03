@@ -1,0 +1,37 @@
+{
+  "id": "fa9f9ad0-3c6c-41dc-936b-4da403e9b72b",
+  "name": "email-input",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "5fa24878-b5c7-4fc9-b750-410ca90596a4",
+          "required": true,
+          "dataType": "@sys.email",
+          "name": "Email",
+          "value": "$Email",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Thank you for your order!"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1520070421,
+  "fallbackIntent": false,
+  "events": []
+}

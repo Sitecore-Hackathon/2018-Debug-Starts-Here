@@ -1,0 +1,38 @@
+[
+  {
+    "id": "c8470ca8-a812-4ab4-b9f1-5c8c3d151cec",
+    "data": [
+      {
+        "text": "My e-mail is ",
+        "userDefined": false
+      },
+      {
+        "text": "$Email",
+        "alias": "Email",
+        "meta": "@sys.email",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1520070421
+  },
+  {
+    "id": "131978dc-eb1c-4c36-afe0-1414967d19cf",
+    "data": [
+      {
+        "text": "My e-mail address is ",
+        "userDefined": false
+      },
+      {
+        "text": "$Email",
+        "alias": "Email",
+        "meta": "@sys.email",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1520070421
+  }
+]

@@ -1,12 +1,47 @@
 ![Hackathon Logo](documentation/images/hackathon.png?raw=true "Hackathon Logo")
 
-# Submission Boilerplate
+# Sitecore xConnect Google Assistant Integration
 
-Welcome to Sitecore Hackathon 2018.
+We are team Debug Starts Here.  Our team consists of the following members:
+
+- Dylan Young (website)
+- Bhavesh Maniya
+- Nisha Magnani
+
+This is our submission for the 2018 Hackathon in the `xConnect` category.
+
+## Quick Links
+
+1. Installation Steps
+2. YouTube Video
+3. [https://bot.dialogflow.com/823e37ff-493e-4757-ad82-d59916e99e55](Bot Demo Page)
+
+## Purpose
+
+The purpose of this xConnect integration, is to pass data collection
+
+## Use Case
+
+Our module was developed with the use case of an organization that is in the business of taking food orders typically via it's website (such as GrubHub or Delivery Dudes).  This application extends that functionality, allowing for new channels to take a customers order automatically, but still bringing that transaction data back into Sitecore for personalization purposes.
+
+## Google Assistant Customizations
+
+Currently our application can be controlled by any device that is a controlled by Google Assistant, which include both voice and textual applications.  A short list of chat devices that will work with our application are included below:
+
+ - Google Assistance on any Android Phones or Tablets
+ - Facebook Messenger
+
+
+
+## Future Enhancements
+
+Eventually we would like there to be a way that you could customize the google assistant bot, and those changes would automatically flow into xConnect so that data can be personalized.
 
 The Hackathon site can be found at http://www.sitecorehackathon.org/sitecore-hackathon-2018/
 
 This purpose of repository is to provide a sample which shows how to structure the Hackathon submissions. We highly recommend
+
+More integrations with other 3rd party chat/home automation applications via the Google Assistant service.
 
 
 ## Entry Submission Requirements 

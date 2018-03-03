@@ -1,0 +1,28 @@
+{
+  "id": "36297e15-ea85-40ba-9a26-2d5ff4aa9e69",
+  "name": "want-food",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "What type of food, do you want?"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1520064339,
+  "fallbackIntent": false,
+  "events": []
+}

@@ -1,0 +1,38 @@
+{
+  "id": "86b46c50-b9db-4a5d-9ac3-9cca81ca8f90",
+  "name": "location-input",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "4064a520-c997-4822-b6e5-238004a78de4",
+          "required": true,
+          "dataType": "@sys.zip-code",
+          "name": "ZipCode",
+          "value": "$ZipCode",
+          "prompts": [],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "What is your e-mail address?"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1520070438,
+  "fallbackIntent": false,
+  "events": []
+}

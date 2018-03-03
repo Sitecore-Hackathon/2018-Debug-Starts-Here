@@ -1,0 +1,23 @@
+[
+  {
+    "value": "Italian",
+    "synonyms": [
+      "Italian",
+      "Italy"
+    ]
+  },
+  {
+    "value": "Mexican",
+    "synonyms": [
+      "Mexican",
+      "Mexico"
+    ]
+  },
+  {
+    "value": "Indian",
+    "synonyms": [
+      "Indian",
+      "India"
+    ]
+  }
+]

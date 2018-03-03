@@ -1,0 +1,68 @@
+[
+  {
+    "id": "0c151599-3db9-4f1a-81ae-07ca1ab65db2",
+    "data": [
+      {
+        "text": "I want ",
+        "userDefined": false
+      },
+      {
+        "text": "Mexican",
+        "alias": "restaurant-types",
+        "meta": "@restaurant-types",
+        "userDefined": false
+      },
+      {
+        "text": " food",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1520064578
+  },
+  {
+    "id": "347c4489-c6d9-452a-a285-177bc514d91c",
+    "data": [
+      {
+        "text": "I want ",
+        "userDefined": false
+      },
+      {
+        "text": "indian",
+        "alias": "restaurant-types",
+        "meta": "@restaurant-types",
+        "userDefined": true
+      },
+      {
+        "text": " food",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1520064562
+  },
+  {
+    "id": "eecfd42e-797e-4624-9c32-b590532a6af8",
+    "data": [
+      {
+        "text": "I want ",
+        "userDefined": false
+      },
+      {
+        "text": "italian",
+        "alias": "restaurant-types",
+        "meta": "@restaurant-types",
+        "userDefined": true
+      },
+      {
+        "text": " food",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1520064562
+  }
+]

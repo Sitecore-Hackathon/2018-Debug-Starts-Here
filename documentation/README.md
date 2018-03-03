@@ -6,15 +6,9 @@ You can find a very good reference to Github flavoured markdown reference in [th
 
 Examples of things to include are the following.
 
-## Team
-
-- Dylan Young
-- Bhavesh Maniya
-- Nisha Magnani
-
 ## Summary
 
-**Category:** Hackathon Category
+**Category:** xConnect
 
 What is the purpose of your module? What problem does it solve and how does it do that?
 
@@ -33,6 +27,7 @@ Provide detailed instructions on how to install the module, and include screensh
 1. Use the Sitecore Installation wizard to install the [package](#link-to-package)
 2. ???
 3. Profit
+4. Drink lots of beer
 
 ## Configuration
 
