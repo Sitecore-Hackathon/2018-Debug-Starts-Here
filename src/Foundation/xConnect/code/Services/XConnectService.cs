@@ -73,9 +73,9 @@ namespace Helixbase.Foundation.xConnect.Services
         /// <summary>
         /// Add Interaction
         /// </summary>
-        /// <param name="identifier"></param>
-        /// <param name="googleApiFacet"></param>
-        public void RegisterInteraction(string identifier, GoogleApiFacet googleApiFacet)
+        /// <param name="identifier">Email</param>
+        /// <param name="googleApiFacetInfo"></param>
+        public void RegisterInteraction(string identifier, GoogleApiFacetInfo googleApiFacetInfo)
         {
             using (XConnectClient client = GetClient())
             {
@@ -89,6 +89,17 @@ namespace Helixbase.Foundation.xConnect.Services
                     channelId: new Guid(Constans.Offline_OtherEventChannelId), userAgent: Constans.UserAgent);
 
                 // Add Custom GoogleApiFacet
+                GoogleApiFacet googleApiFacet = contact.GetFacet<GoogleApiFacet>(GoogleApiFacet.FacetName);
+                if (googleApiFacet == null)
+                {
+                    googleApiFacet = new GoogleApiFacet();
+                    googleApiFacet.GoogleApiFacetInfoList.Add(new GoogleApiFacetInfo { ZipCode = googleApiFacetInfo.ZipCode, RestaurantType = googleApiFacetInfo.RestaurantType });
+                }
+                else
+                {
+                    googleApiFacet.GoogleApiFacetInfoList.Add(new GoogleApiFacetInfo { ZipCode = googleApiFacetInfo.ZipCode, RestaurantType = googleApiFacetInfo.RestaurantType });
+                }
+
                 client.SetFacet<GoogleApiFacet>(new FacetReference(contact, GoogleApiFacet.FacetName), googleApiFacet);
 
                 //// Adding some face information
@@ -145,7 +156,7 @@ namespace Helixbase.Foundation.xConnect.Services
                 {
                     result.GoogleInteractions = new List<GoogleInteractionModel>();
 
-                    foreach(var googleApiFacetInfo in googleApiFacet.GoogleApiFacetInfoList)
+                    foreach (var googleApiFacetInfo in googleApiFacet.GoogleApiFacetInfoList)
                     {
                         result.GoogleInteractions.Add(new GoogleInteractionModel { ZipCode = googleApiFacetInfo.ZipCode, RestaurantType = googleApiFacetInfo.RestaurantType });
                     }

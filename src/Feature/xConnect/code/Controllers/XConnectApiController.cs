@@ -81,17 +81,13 @@ namespace Helixbase.Feature.xConnect.Controllers
                     return response;
                 }
 
-                GoogleApiFacet googleApiFacet = new GoogleApiFacet
-                {
-                    GoogleApiFacetInfoList = new List<GoogleApiFacetInfo>()
-                };
-                googleApiFacet.GoogleApiFacetInfoList.Add(new GoogleApiFacetInfo
+                GoogleApiFacetInfo googleApiFacetInfo = new GoogleApiFacetInfo
                 {
                     ZipCode = googleInteractionRequestModel.ZipCode,
                     RestaurantType = googleInteractionRequestModel.RestaurantType
-                });
-
-                _xConnectService.RegisterInteraction(googleInteractionRequestModel.Email, googleApiFacet);
+                };
+                
+                _xConnectService.RegisterInteraction(googleInteractionRequestModel.Email, googleApiFacetInfo);
 
                 response = Request.CreateResponse(HttpStatusCode.Created);
                 return response;

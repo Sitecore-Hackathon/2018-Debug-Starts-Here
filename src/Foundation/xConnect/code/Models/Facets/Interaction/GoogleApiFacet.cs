@@ -12,7 +12,7 @@ namespace Helixbase.Foundation.xConnect.Models.Facets.Interaction
     {
         public const string FacetName = "GoogleApiFacet";
 
-        public List<GoogleApiFacetInfo> GoogleApiFacetInfoList { get; set; }
+        public List<GoogleApiFacetInfo> GoogleApiFacetInfoList { get; set; } = new List<GoogleApiFacetInfo>();
     }
 
     public class GoogleApiFacetInfo
