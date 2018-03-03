@@ -12,7 +12,7 @@ This is our submission for the 2018 Hackathon in the `xConnect` category.
 
 ## Quick Links
 
-1. [Installation Steps](/documentation/Readme.md)
+1. [Installation Steps](https://github.com/Sitecore-Hackathon/2018-Debug-Starts-Here/tree/master/documentation/Readme.md)
 2. YouTube Video
 3. [Bot Demo Page](https://bot.dialogflow.com/823e37ff-493e-4757-ad82-d59916e99e55)
 
