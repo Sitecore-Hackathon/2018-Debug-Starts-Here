@@ -11,8 +11,9 @@ namespace code
     {
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
-            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            // Temparory commenting below lines of code
+            //AreaRegistration.RegisterAllAreas();
+            //RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }
 }
