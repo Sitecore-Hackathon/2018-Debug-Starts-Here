@@ -115,6 +115,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BaseApiController.cs" />
+    <Compile Include="Models\ContactRequestModel.cs" />
     <Compile Include="Models\GoogleInteractionRequestModel.cs" />
     <Compile Include="Controllers\XConnectApiController.cs" />
     <Compile Include="Models\ContactInfoRequestModel.cs" />

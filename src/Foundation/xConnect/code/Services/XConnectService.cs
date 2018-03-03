@@ -1,4 +1,5 @@
-﻿using Helixbase.Foundation.xConnect.Models.Facets;
+﻿using Helixbase.Foundation.xConnect.Models;
+using Helixbase.Foundation.xConnect.Models.Facets;
 using Helixbase.Foundation.xConnect.Models.Facets.Interaction;
 using Sitecore.Configuration;
 using Sitecore.XConnect;
@@ -94,7 +95,7 @@ namespace Helixbase.Foundation.xConnect.Services
                 //IpInfo ipInfo = new IpInfo("127.0.0.1");
                 //ipInfo.BusinessName = "Home";
                 //client.SetFacet<IpInfo>(interaction, IpInfo.DefaultFacetKey, ipInfo);
-                
+
                 //WebVisit webVisit = new WebVisit();
                 //webVisit.SiteName = "Offline";
                 //client.SetFacet<WebVisit>(interaction, WebVisit.DefaultFacetKey, webVisit);
@@ -109,6 +110,48 @@ namespace Helixbase.Foundation.xConnect.Services
                 client.AddInteraction(interaction);
 
                 client.Submit();
+            }
+        }
+
+        /// <summary>
+        /// Get Contact
+        /// </summary>
+        /// <param name="identifier">Email</param>
+        /// <returns></returns>
+        public ContactModel GetContact(string identifier)
+        {
+            ContactModel result = null;
+
+            using (XConnectClient client = GetClient())
+            {
+                var contactReference = new IdentifiedContactReference(Constans.xConnectApiSource, identifier);
+
+                var contact = client.Get<Contact>(contactReference, new ContactExpandOptions(new string[] { PersonalInformation.DefaultFacetKey }));
+                if (contact == null)
+                    return result;
+
+                PersonalInformation personalInformation = contact.GetFacet<PersonalInformation>(PersonalInformation.DefaultFacetKey);
+                if (personalInformation == null)
+                    return result;
+
+                result = new ContactModel
+                {
+                    FirstName = personalInformation.FirstName,
+                    LastName = personalInformation.LastName
+                };
+
+                GoogleApiFacet googleApiFacet = contact.GetFacet<GoogleApiFacet>(GoogleApiFacet.FacetName);
+                if (googleApiFacet != null)
+                {
+                    result.GoogleInteractions = new List<GoogleInteractionModel>();
+
+                    foreach(var googleApiFacetInfo in googleApiFacet.GoogleApiFacetInfoList)
+                    {
+                        result.GoogleInteractions.Add(new GoogleInteractionModel { ZipCode = googleApiFacetInfo.ZipCode, RestaurantType = googleApiFacetInfo.RestaurantType });
+                    }
+                }
+
+                return result;
             }
         }
 

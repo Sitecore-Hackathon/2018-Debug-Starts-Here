@@ -1,4 +1,5 @@
 ﻿using Helixbase.Feature.xConnect.Models;
+using Helixbase.Foundation.xConnect.Models;
 using Helixbase.Foundation.xConnect.Models.Facets.Interaction;
 using Helixbase.Foundation.xConnect.Services;
 using Sitecore.Diagnostics;
@@ -82,9 +83,13 @@ namespace Helixbase.Feature.xConnect.Controllers
 
                 GoogleApiFacet googleApiFacet = new GoogleApiFacet
                 {
-                    ZipCode = googleInteractionRequestModel.ZipCode,
-                    Restaurant = googleInteractionRequestModel.RestaurantType
+                    GoogleApiFacetInfoList = new List<GoogleApiFacetInfo>()
                 };
+                googleApiFacet.GoogleApiFacetInfoList.Add(new GoogleApiFacetInfo
+                {
+                    ZipCode = googleInteractionRequestModel.ZipCode,
+                    RestaurantType = googleInteractionRequestModel.RestaurantType
+                });
 
                 _xConnectService.RegisterInteraction(googleInteractionRequestModel.Email, googleApiFacet);
 
@@ -94,6 +99,40 @@ namespace Helixbase.Feature.xConnect.Controllers
             catch (Exception ex)
             {
                 Log.Error($"Error in XConnectApiController.AddGoogleInteraction(): while adding interaction for contact with email: {googleInteractionRequestModel?.Email}", ex, this);
+
+                response = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, InternalServerErrorMessage);
+                return response;
+            }
+        }
+
+        [System.Web.Http.HttpPost]
+        public HttpResponseMessage GetContact(ContactRequestModel contactRequestModel)
+        {
+            HttpResponseMessage response;
+
+            try
+            {
+                if (contactRequestModel == null || !IsValidEmail(contactRequestModel.Email))
+                {
+                    response = Request.CreateResponse(HttpStatusCode.BadRequest, InvalidInputParametersMessage);
+                    return response;
+                }
+
+                bool isContactIdentified = _xConnectService.IdentifyContact(contactRequestModel.Email);
+                if (!isContactIdentified)
+                {
+                    response = Request.CreateResponse(HttpStatusCode.BadRequest, InvalidContactIdentifiedMessage);
+                    return response;
+                }
+
+                ContactModel contactModel = _xConnectService.GetContact(contactRequestModel.Email);
+
+                response = Request.CreateResponse(HttpStatusCode.OK, contactModel);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Error in XConnectApiController.GetContact(): while getting contact details with email: {contactRequestModel?.Email}", ex, this);
 
                 response = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, InternalServerErrorMessage);
                 return response;

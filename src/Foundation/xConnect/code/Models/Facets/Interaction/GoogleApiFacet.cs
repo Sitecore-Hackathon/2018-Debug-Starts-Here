@@ -12,16 +12,13 @@ namespace Helixbase.Foundation.xConnect.Models.Facets.Interaction
     {
         public const string FacetName = "GoogleApiFacet";
 
+        public List<GoogleApiFacetInfo> GoogleApiFacetInfoList { get; set; }
+    }
+
+    public class GoogleApiFacetInfo
+    {
         public string ZipCode { get; set; }
 
-        public string Restaurant { get; set; }
-
-        //public enum RestaurantType
-        //{
-        //    Unknown = 0,
-        //    Italian,
-        //    Indian,
-        //    Chines
-        //}
+        public string RestaurantType { get; set; }
     }
 }

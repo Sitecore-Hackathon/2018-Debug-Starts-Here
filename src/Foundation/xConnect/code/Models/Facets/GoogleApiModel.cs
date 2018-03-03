@@ -14,7 +14,7 @@ namespace Helixbase.Foundation.xConnect.Models.Facets
 
         private static XdbModel BuildModel()
         {
-            var modelBuilder = new XdbModelBuilder("GoogleApiModel", new XdbModelVersion(1, 0));
+            var modelBuilder = new XdbModelBuilder("GoogleApiModel", new XdbModelVersion(1, 1));
 
             modelBuilder.ReferenceModel(Sitecore.XConnect.Collection.Model.CollectionModel.Model);
             modelBuilder.DefineFacet<Contact, GoogleApiFacet>(GoogleApiFacet.FacetName);
