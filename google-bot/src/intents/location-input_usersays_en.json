@@ -1,6 +1,20 @@
 [
   {
-    "id": "467dc31f-2d7c-4139-b8c0-ca4ea7a6ef58",
+    "id": "85916ac9-87e3-491a-aea1-890f7f59293f",
+    "data": [
+      {
+        "text": "$ZipCode",
+        "alias": "ZipCode",
+        "meta": "@sys.zip-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1520092028
+  },
+  {
+    "id": "28869b04-a86c-42b6-ac87-8fba6c0e8aa8",
     "data": [
       {
         "text": "$ZipCode",
@@ -15,10 +29,10 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1520067173
+    "updated": 1520092028
   },
   {
-    "id": "4a26a1fb-97d1-4c56-af50-d113c35d2ffd",
+    "id": "004834d1-133f-4919-bf7e-52b19b7e2a94",
     "data": [
       {
         "text": "Zip is ",
@@ -33,10 +47,10 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1520067173
+    "updated": 1520092028
   },
   {
-    "id": "fe5f6676-9a5c-46aa-b1bd-ac11a0b70522",
+    "id": "a5dbf548-b4a6-4c76-bee8-46f44f261e10",
     "data": [
       {
         "text": "My zip code is ",
@@ -51,6 +65,6 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1520067173
+    "updated": 1520092028
   }
 ]

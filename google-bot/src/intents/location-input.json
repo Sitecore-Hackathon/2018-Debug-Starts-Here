@@ -6,7 +6,13 @@
   "responses": [
     {
       "resetContexts": false,
-      "affectedContexts": [],
+      "affectedContexts": [
+        {
+          "name": "ZipCode",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
       "parameters": [
         {
           "id": "4064a520-c997-4822-b6e5-238004a78de4",
@@ -30,9 +36,9 @@
     }
   ],
   "priority": 500000,
-  "webhookUsed": true,
+  "webhookUsed": false,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1520070438,
+  "lastUpdate": 1520092028,
   "fallbackIntent": false,
   "events": []
 }

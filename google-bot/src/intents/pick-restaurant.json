@@ -6,7 +6,13 @@
   "responses": [
     {
       "resetContexts": false,
-      "affectedContexts": [],
+      "affectedContexts": [
+        {
+          "name": "restaurant-types",
+          "parameters": {},
+          "lifespan": 5
+        }
+      ],
       "parameters": [
         {
           "id": "3693b0d8-81f7-42ca-9d7b-8515b70bced4",
@@ -27,7 +33,7 @@
         {
           "type": 0,
           "lang": "en",
-          "speech": "Okay, what is your Address?"
+          "speech": "Okay, what is your Zip Code?"
         }
       ],
       "defaultResponsePlatforms": {},
@@ -35,9 +41,9 @@
     }
   ],
   "priority": 500000,
-  "webhookUsed": true,
+  "webhookUsed": false,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1520070460,
+  "lastUpdate": 1520092095,
   "fallbackIntent": false,
   "events": []
 }

@@ -1,6 +1,50 @@
 [
   {
-    "id": "c8470ca8-a812-4ab4-b9f1-5c8c3d151cec",
+    "id": "4c148c87-3580-49c2-a1b3-30f184344caa",
+    "data": [
+      {
+        "text": "$Email",
+        "alias": "Email",
+        "meta": "@sys.email",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1520092051
+  },
+  {
+    "id": "45e5c2dc-1c2f-4e43-9d10-8004059c99ec",
+    "data": [
+      {
+        "text": "my email is dylany@gmail.com",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "5b943fb2-0ab5-4034-9db3-647e6b633341",
+    "data": [
+      {
+        "text": "My email address is ",
+        "userDefined": false
+      },
+      {
+        "text": "$Email",
+        "alias": "Email",
+        "meta": "@sys.email",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1520091215
+  },
+  {
+    "id": "b8fbbf48-15b8-490e-be74-34352b7abf65",
     "data": [
       {
         "text": "My e-mail is ",
@@ -15,10 +59,10 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1520070421
+    "updated": 1520091215
   },
   {
-    "id": "131978dc-eb1c-4c36-afe0-1414967d19cf",
+    "id": "cd2e0c28-1e3c-4248-af27-755441badcd6",
     "data": [
       {
         "text": "My e-mail address is ",
@@ -33,6 +77,6 @@
     ],
     "isTemplate": false,
     "count": 0,
-    "updated": 1520070421
+    "updated": 1520091215
   }
 ]

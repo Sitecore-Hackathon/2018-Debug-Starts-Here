@@ -2,7 +2,10 @@
   "id": "fa9f9ad0-3c6c-41dc-936b-4da403e9b72b",
   "name": "email-input",
   "auto": true,
-  "contexts": [],
+  "contexts": [
+    "ZipCode",
+    "restaurant-types"
+  ],
   "responses": [
     {
       "resetContexts": false,
@@ -31,7 +34,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1520070421,
+  "lastUpdate": 1520092051,
   "fallbackIntent": false,
   "events": []
 }
