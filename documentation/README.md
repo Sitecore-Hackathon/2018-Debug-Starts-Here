@@ -22,6 +22,14 @@ Does your module rely on other Sitecore modules or frameworks?
 
 ## Installation
 
+This installation includes instructions on installing the required changes for xConnect as well as installing the Google Assistant Project:
+
+### Sitecore
+
+### Google Assistant
+
+In the repository we have included source for the changes required
+
 Provide detailed instructions on how to install the module, and include screenshots where necessary.
 
 1. Use the Sitecore Installation wizard to install the [package](#link-to-package)

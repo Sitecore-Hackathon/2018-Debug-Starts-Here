@@ -4,7 +4,7 @@
 
 We are team Debug Starts Here.  Our team consists of the following members:
 
-- Dylan Young (website)
+- Dylan Young
 - Bhavesh Maniya
 - Nisha Magnani
 
@@ -12,9 +12,9 @@ This is our submission for the 2018 Hackathon in the `xConnect` category.
 
 ## Quick Links
 
-1. Installation Steps
+1. [Installation Steps](/documentation/Readme.md)
 2. YouTube Video
-3. [https://bot.dialogflow.com/823e37ff-493e-4757-ad82-d59916e99e55](Bot Demo Page)
+3. [Bot Demo Page](https://bot.dialogflow.com/823e37ff-493e-4757-ad82-d59916e99e55)
 
 ## Purpose
 

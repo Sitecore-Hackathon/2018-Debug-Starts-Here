@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Properties\PublishProfiles\Localhost.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\code\Helixbase.Foundation.xConnect.csproj">

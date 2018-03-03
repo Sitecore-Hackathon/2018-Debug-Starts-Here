@@ -140,6 +140,7 @@
   <ItemGroup>
     <Content Include="App_Config\Include\Foundation\Foundation.xConnect.RegisterContainer.config" />
     <Content Include="App_Config\Include\Foundation\Foundation.xConnect.config" />
+    <None Include="Properties\PublishProfiles\Localhost.pubxml" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

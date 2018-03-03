@@ -1,8 +1,8 @@
 module.exports = function () {
     var config = {
-        webRoot: "c:\\inetpub\\wwwroot\\demo.helixbase",
-        devRoot: "c:\\projects\\Helix base",
-        solutionName: "Helixbase",
+        webRoot: "c:\\inetpub\\wwwroot\\hackathon.sc",
+        devRoot: "C:\\Development\\2018-Debug-Starts-Here",
+        solutionName: "Hackathon.DSH",
         buildConfiguration: "Debug",
         MSBuildToolsVersion: 'auto'
     }
