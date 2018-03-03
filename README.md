@@ -44,7 +44,7 @@ More integrations with other 3rd party chat/home automation applications via the
 ## Sitecore Package Installation
 
 - Extract xConnect.Service.zip file
-- Install xConnect.Servoce.1.0.0.zip package
+- Install xConnect.Service.1.0.0.zip package
   - It will add below config files:
     - [scWebRoot]\App_Config\Include\Foundation\Foundation.xConnect.config
     - [scWebRoot]\App_Config\Include\Foundation\Foundation.xConnect.RegisterContainer.config
@@ -54,7 +54,7 @@ More integrations with other 3rd party chat/home automation applications via the
     - <sc.variable name="xConnectThumbprint" value="0B707780C8ED51F52BD34C3229C61756A34B921D" />
   - Copy GoogleApiModel, 1.0.json file and paste it at below locations:
     - [xConnectWebRoot]\App_data\Models\
-    - [xConnectWebRoot]\ App_data\jobs\continuous\IndexWorker\App_data\Models\
+    - [xConnectWebRoot]\App_data\jobs\continuous\IndexWorker\App_data\Models\
 
 
 ## Entry Submission Requirements 
