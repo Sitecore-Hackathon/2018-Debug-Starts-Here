@@ -146,13 +146,12 @@
   <ItemGroup>
     <Compile Include="Constans.cs" />
     <Compile Include="DI\RegisterContainer.cs" />
-    <Compile Include="Models\ContactInformation.cs" />
-    <Compile Include="Models\OrderRegion.cs" />
-    <Compile Include="Models\OrderApiModel.cs" />
+    <Compile Include="Models\Facets\CustomEvent.cs" />
+    <Compile Include="Models\Facets\Interaction\GoogleApiFacet.cs" />
+    <Compile Include="Models\Facets\GoogleApiModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IXConnectService.cs" />
     <Compile Include="Services\XConnectService.cs" />
-    <Compile Include="xConnect.Event\LeadCaptured.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

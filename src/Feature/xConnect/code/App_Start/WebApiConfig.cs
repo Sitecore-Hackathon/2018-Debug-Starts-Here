@@ -19,6 +19,12 @@ namespace Helixbase.Feature.xConnect
                 routeTemplate: "xConnet/Contact",
                 defaults: new { controller = "XConnectApi", action = "AddContact" }
                 );
+
+            config.Routes.MapHttpRoute(
+               name: "Feature.xConnect.AddGoogleInteraction",
+               routeTemplate: "xConnet/GoogleInteraction",
+               defaults: new { controller = "XConnectApi", action = "AddGoogleInteraction" }
+               );
         }
     }
 }

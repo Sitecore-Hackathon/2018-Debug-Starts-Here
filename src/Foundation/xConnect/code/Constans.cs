@@ -8,5 +8,10 @@ namespace Helixbase.Foundation.xConnect
     public class Constans
     {
         public const string xConnectApiSource = "xConnectApi";
+        public const string UserAgent = "Mobile Device";
+
+        // Offline -> Other Event
+        public const string Offline_OtherEventChannelId = "{670BB98B-B352-40C1-99C8-880BF2AA4C54}";
+
     }
 }

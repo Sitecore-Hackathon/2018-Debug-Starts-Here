@@ -14,6 +14,7 @@ namespace Helixbase.Feature.xConnect.Controllers
         protected const string InternalServerErrorMessage = "Opps! something went wrong. Please try again.";
         protected const string InvalidInputParametersMessage = "You've provided invalid input parameters.";
         protected const string AlreadyIdentifiedMessage = "You are already identified in our system.";
+        protected const string InvalidContactIdentifiedMessage = "You aren't identified in our system.";
 
         protected bool IsValidEmail(string email)
         {
