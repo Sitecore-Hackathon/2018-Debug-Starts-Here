@@ -132,12 +132,14 @@ namespace Helixbase.Foundation.xConnect.Services
         public ContactModel GetContact(string identifier)
         {
             ContactModel result = null;
-
+            
             using (XConnectClient client = GetClient())
             {
                 var contactReference = new IdentifiedContactReference(Constans.xConnectApiSource, identifier);
 
-                var contact = client.Get<Contact>(contactReference, new ContactExpandOptions(new string[] { PersonalInformation.DefaultFacetKey }));
+                // Note: Make sure to pass the required facets, if not sure then pass all facets.
+                var contactFacets = client.Model.Facets.Where(c => c.Target == EntityType.Contact).Select(x => x.Name);
+                var contact = client.Get<Contact>(contactReference, new ContactExpandOptions(contactFacets.ToArray()));
                 if (contact == null)
                     return result;
 
@@ -150,7 +152,7 @@ namespace Helixbase.Foundation.xConnect.Services
                     FirstName = personalInformation.FirstName,
                     LastName = personalInformation.LastName
                 };
-
+                
                 GoogleApiFacet googleApiFacet = contact.GetFacet<GoogleApiFacet>(GoogleApiFacet.FacetName);
                 if (googleApiFacet != null)
                 {
