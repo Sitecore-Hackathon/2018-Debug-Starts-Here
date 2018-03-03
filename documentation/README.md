@@ -1,47 +1,31 @@
-# Documentation
-
-The documentation for this years Hackathon must be provided as a readme in Markdown format as part of your submission. 
-
-You can find a very good reference to Github flavoured markdown reference in [this cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). If you want something a bit more WYSIWYG for editing then could use [StackEdit](https://stackedit.io/app) which provides a more user friendly interface for generating the Markdown code. Those of you who are [VS Code fans](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview) can edit/preview directly in that interface too.
-
-Examples of things to include are the following.
-
-## Summary
-
 **Category:** xConnect
 
 What is the purpose of your module? What problem does it solve and how does it do that?
 
 ## Pre-requisites
 
-Does your module rely on other Sitecore modules or frameworks?
+Below is a list of the dependencies required to integrate xConnect with Google Assistant:
 
-- List any dependencies
-- Or other modules that must be installed
-- Or services that must be enabled/configured
+- Sitecore 9.0.1 with xConnect/xDb enabled
+- Google Developer Account
 
 ## Installation
 
-This installation includes instructions on installing the required changes for xConnect as well as installing the Google Assistant Project:
+This installation includes instructions on installing the required changes for xConnect as well as installing the Google Assistant Project in your Google Developer account.
 
-### Sitecore
+### Sitecore Package Installation
 
-### Google Assistant
+  - Extract xConnect.Service.zip file
+  - Install xConnect.Service.1.0.0.zip package
 
-In the repository we have included source for the changes required
+It will add below config files:
+>[scWebRoot]\App_Config\Include\Foundation\Foundation.xConnect.config
+>[scWebRoot]\App_Config\Include\Foundation\Foundation.xConnect.RegisterContainer.config
+>[scWebRoot]\App_Config\Include\Feature\Feature.xConnect.Routes.config
 
-Provide detailed instructions on how to install the module, and include screenshots where necessary.
+#### xConnect Customizations
 
-1. Use the Sitecore Installation wizard to install the [package](#link-to-package)
-2. ???
-3. Profit
-4. Drink lots of beer
-
-## Configuration
-
-How do you configure your module once it is installed? Are there items that need to be updated with settings, or maybe config files need to have keys updated?
-
-Remember you are using Markdown, you can provide code samples too:
+Add the following patch to your Sitecore.config file under `[scWebRoot]\App_Config\` and change its value based on your environment.
 
 ```xml
 <?xml version="1.0"?>
@@ -50,31 +34,18 @@ Remember you are using Markdown, you can provide code samples too:
 -->
 <configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
   <sitecore>
-    <settings>
-      <setting name="MyModule.Setting" value="Hackathon" />
-    </settings>
+    <sc.variable name="xconnectHostName" value="sc91.xconnect.local" />
+    <sc.variable name="xConnectThumbprint" value="0B707780C8ED51F52BD34C3229C61756A34B921D" />
   </sitecore>
 </configuration>
 ```
 
-## Usage
+Copy `GoogleApiModel, 1.0.json` file and paste it at below locations:
 
-Provide documentation  about your module, how do the users use your module, where are things located, what do icons mean, are there any secret shortcuts etc.
+  > [xConnectWebRoot]\App_data\Models\
+  > [xConnectWebRoot]\App_data\jobs\continuous\IndexWorker\App_data\Models\
 
-Please include screenshots where necessary. You can add images to the `./images` folder and then link to them from your documentation:
+### Google Assistant
 
-![Hackathon Logo](images/hackathon.png?raw=true "Hackathon Logo")
+In the repository we have included source for the changes required so you can start building your own Google Assistant applications.  Those changes are found here: `
 
-You can embed images of different formats too:
-
-![Deal With It](images/deal-with-it.gif?raw=true "Deal With It")
-
-And you can embed external images too:
-
-![Random](https://placeimg.com/480/240/any "Random")
-
-## Video
-
-Please provide a video highlighing your Hackathon module submission and provide a link to the video. Either a [direct link](https://www.youtube.com/watch?v=EpNhxW4pNKk) to the video, upload it to this documentation folder or maybe upload it to Youtube...
-
-[![Sitecore Hackathon Video Embedding Alt Text](https://img.youtube.com/vi/EpNhxW4pNKk/0.jpg)](https://www.youtube.com/watch?v=EpNhxW4pNKk)
