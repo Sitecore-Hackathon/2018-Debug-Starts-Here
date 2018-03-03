@@ -1,4 +1,5 @@
-﻿using Helixbase.Foundation.xConnect.Models;
+﻿using Helixbase.Foundation.xConnect.Models.Facets;
+using Helixbase.Foundation.xConnect.Models.Facets.Interaction;
 using Sitecore.Configuration;
 using Sitecore.XConnect;
 using Sitecore.XConnect.Client;
@@ -68,6 +69,49 @@ namespace Helixbase.Foundation.xConnect.Services
             }
         }
 
+        /// <summary>
+        /// Add Interaction
+        /// </summary>
+        /// <param name="identifier"></param>
+        /// <param name="googleApiFacet"></param>
+        public void RegisterInteraction(string identifier, GoogleApiFacet googleApiFacet)
+        {
+            using (XConnectClient client = GetClient())
+            {
+                var contactReference = new IdentifiedContactReference(Constans.xConnectApiSource, identifier);
+
+                var contact = client.Get<Contact>(contactReference, new ContactExpandOptions(new string[] { PersonalInformation.DefaultFacetKey }));
+                if (contact == null)
+                    return;
+
+                Interaction interaction = new Interaction(contactReference, InteractionInitiator.Contact,
+                    channelId: new Guid(Constans.Offline_OtherEventChannelId), userAgent: Constans.UserAgent);
+
+                // Add Custom GoogleApiFacet
+                client.SetFacet<GoogleApiFacet>(new FacetReference(contact, GoogleApiFacet.FacetName), googleApiFacet);
+
+                //// Adding some face information
+                //IpInfo ipInfo = new IpInfo("127.0.0.1");
+                //ipInfo.BusinessName = "Home";
+                //client.SetFacet<IpInfo>(interaction, IpInfo.DefaultFacetKey, ipInfo);
+                
+                //WebVisit webVisit = new WebVisit();
+                //webVisit.SiteName = "Offline";
+                //client.SetFacet<WebVisit>(interaction, WebVisit.DefaultFacetKey, webVisit);
+
+                Outcome outcome = new Outcome(new Guid(Constans.Offline_OtherEventChannelId), DateTime.UtcNow, "USD", 0)
+                {
+                    EngagementValue = 10,
+                    Text = "Google Api Interaction"
+                };
+                interaction.Events.Add(outcome);
+
+                client.AddInteraction(interaction);
+
+                client.Submit();
+            }
+        }
+
         #region Private Method(s)
         private XConnectClient GetClient()
         {
@@ -87,8 +131,11 @@ namespace Helixbase.Foundation.xConnect.Services
             var searchClient = new SearchWebApiClient(new Uri($"{XConnectUrl.TrimEnd(new char['/'])}/odata"), clientModifiers, new[] { certificateModifier });
             var configurationClient = new ConfigurationWebApiClient(new Uri($"{XConnectUrl.TrimEnd(new char['/'])}/configuration"), clientModifiers, new[] { certificateModifier });
 
+            //Reference: https://sitecore.stackexchange.com/questions/8910/the-type-of-this-instance-does-not-correspond-to-any-type-in-the-model
+            XdbModel[] models = { CollectionModel.Model, GoogleApiModel.Model };
+
             var xConnectClientConfiguration = new XConnectClientConfiguration(
-                              new XdbRuntimeModel(CollectionModel.Model),
+                              new XdbRuntimeModel(models),
                               collectionClient,
                               searchClient,
                               configurationClient);

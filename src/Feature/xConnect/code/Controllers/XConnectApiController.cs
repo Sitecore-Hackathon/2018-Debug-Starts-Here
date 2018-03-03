@@ -1,4 +1,5 @@
 ﻿using Helixbase.Feature.xConnect.Models;
+using Helixbase.Foundation.xConnect.Models.Facets.Interaction;
 using Helixbase.Foundation.xConnect.Services;
 using Sitecore.Diagnostics;
 using Sitecore.Mvc.Controllers;
@@ -26,39 +27,77 @@ namespace Helixbase.Feature.xConnect.Controllers
         { }
 
         [System.Web.Http.HttpPost]
-        public HttpResponseMessage AddContact(ContactInfo contactInfo)
+        public HttpResponseMessage AddContact(ContactInfoRequestModel contactInfoRequestModel)
         {
             HttpResponseMessage response;
 
             try
             {
-                if (contactInfo == null || !IsValidEmail(contactInfo.Email))
+                if (contactInfoRequestModel == null || !IsValidEmail(contactInfoRequestModel.Email))
                 {
                     response = Request.CreateResponse(HttpStatusCode.BadRequest, InvalidInputParametersMessage);
                     return response;
                 }
 
-                bool isContactIdentified = _xConnectService.IdentifyContact(contactInfo.Email);
+                bool isContactIdentified = _xConnectService.IdentifyContact(contactInfoRequestModel.Email);
                 if (isContactIdentified)
                 {
                     response = Request.CreateResponse(HttpStatusCode.BadRequest, AlreadyIdentifiedMessage);
                     return response;
                 }
 
-                _xConnectService.AddContact(contactInfo.Email, contactInfo.FirstName, contactInfo.LastName);
+                _xConnectService.AddContact(contactInfoRequestModel.Email, contactInfoRequestModel.FirstName, contactInfoRequestModel.LastName);
 
                 response = Request.CreateResponse(HttpStatusCode.Created);
                 return response;
             }
             catch (Exception ex)
             {
-                Log.Error($"Error in XConnectApiController.AddContact(): while adding contact with email: {contactInfo?.Email}", ex, this);
+                Log.Error($"Error in XConnectApiController.AddContact(): while adding contact with email: {contactInfoRequestModel?.Email}", ex, this);
 
                 response = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, InternalServerErrorMessage);
                 return response;
             }
         }
 
+        [System.Web.Http.HttpPost]
+        public HttpResponseMessage AddGoogleInteraction(GoogleInteractionRequestModel googleInteractionRequestModel)
+        {
+            HttpResponseMessage response;
 
+            try
+            {
+                if (googleInteractionRequestModel == null || !IsValidEmail(googleInteractionRequestModel.Email))
+                {
+                    response = Request.CreateResponse(HttpStatusCode.BadRequest, InvalidInputParametersMessage);
+                    return response;
+                }
+
+                bool isContactIdentified = _xConnectService.IdentifyContact(googleInteractionRequestModel.Email);
+                if (!isContactIdentified)
+                {
+                    response = Request.CreateResponse(HttpStatusCode.BadRequest, InvalidContactIdentifiedMessage);
+                    return response;
+                }
+
+                GoogleApiFacet googleApiFacet = new GoogleApiFacet
+                {
+                    ZipCode = googleInteractionRequestModel.ZipCode,
+                    Restaurant = googleInteractionRequestModel.RestaurantType
+                };
+
+                _xConnectService.RegisterInteraction(googleInteractionRequestModel.Email, googleApiFacet);
+
+                response = Request.CreateResponse(HttpStatusCode.Created);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"Error in XConnectApiController.AddGoogleInteraction(): while adding interaction for contact with email: {googleInteractionRequestModel?.Email}", ex, this);
+
+                response = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, InternalServerErrorMessage);
+                return response;
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Helixbase.Foundation.xConnect.Models.Facets.Interaction;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,6 @@ namespace Helixbase.Foundation.xConnect.Services
     {
         void AddContact(string identifier, string firstName, string lastName);
         bool IdentifyContact(string identifier);
+        void RegisterInteraction(string identifier, GoogleApiFacet googleApiFacet);
     }
 }
