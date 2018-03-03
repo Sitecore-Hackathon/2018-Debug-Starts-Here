@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Feature", "Feature", "{17DD5718-6E13-4F2C-9738-B410396D4552}"
 EndProject
@@ -72,9 +72,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helixbase.Project.Helixbase
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helixbase.Project.Common", "src\Project\Common\code\Helixbase.Project.Common.csproj", "{6F8C583B-E667-4DEB-A603-77932C7803B0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Google", "Google", "{4A4FBD9E-F056-4068-8456-602F9FCF307C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xConnect", "xConnect", "{4A4FBD9E-F056-4068-8456-602F9FCF307C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helixbase.Foundation.Google", "src\Foundation\Google\code\Helixbase.Foundation.Google.csproj", "{0A461113-CB18-4928-AA2C-82FAC3DFB9B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helixbase.Foundation.xConnect", "src\Foundation\xConnect\code\Helixbase.Foundation.xConnect.csproj", "{0A461113-CB18-4928-AA2C-82FAC3DFB9B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helixbase.Foundation.xConnect.XModelSerializer", "src\Foundation\xConnect\ConsoleApp\Helixbase.Foundation.xConnect.XModelSerializer.csproj", "{11BAADEE-7178-429B-83D9-783CED2E4E7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "xConnect", "xConnect", "{C64ED91A-958A-4415-BCC9-9C1B0188E8A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helixbase.Feature.xConnect", "src\Feature\xConnect\code\Helixbase.Feature.xConnect.csproj", "{905E7AF7-FB1A-4173-B331-2E7E07FCAA37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -126,6 +132,14 @@ Global
 		{0A461113-CB18-4928-AA2C-82FAC3DFB9B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A461113-CB18-4928-AA2C-82FAC3DFB9B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A461113-CB18-4928-AA2C-82FAC3DFB9B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11BAADEE-7178-429B-83D9-783CED2E4E7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11BAADEE-7178-429B-83D9-783CED2E4E7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11BAADEE-7178-429B-83D9-783CED2E4E7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11BAADEE-7178-429B-83D9-783CED2E4E7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{905E7AF7-FB1A-4173-B331-2E7E07FCAA37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{905E7AF7-FB1A-4173-B331-2E7E07FCAA37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{905E7AF7-FB1A-4173-B331-2E7E07FCAA37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{905E7AF7-FB1A-4173-B331-2E7E07FCAA37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -154,6 +168,9 @@ Global
 		{6F8C583B-E667-4DEB-A603-77932C7803B0} = {376562B0-3B85-42CE-9A3F-EA83D0AD4F59}
 		{4A4FBD9E-F056-4068-8456-602F9FCF307C} = {4FDA1DCD-D33E-447E-91C1-F4AE818E2CF0}
 		{0A461113-CB18-4928-AA2C-82FAC3DFB9B1} = {4A4FBD9E-F056-4068-8456-602F9FCF307C}
+		{11BAADEE-7178-429B-83D9-783CED2E4E7A} = {4A4FBD9E-F056-4068-8456-602F9FCF307C}
+		{C64ED91A-958A-4415-BCC9-9C1B0188E8A9} = {17DD5718-6E13-4F2C-9738-B410396D4552}
+		{905E7AF7-FB1A-4173-B331-2E7E07FCAA37} = {C64ED91A-958A-4415-BCC9-9C1B0188E8A9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {311DA37D-528B-43B2-A99B-E7253F841D46}
