@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Feature", "Feature", "{17DD5718-6E13-4F2C-9738-B410396D4552}"
 EndProject
@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 		.editorconfig = .editorconfig
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		gulp-config.js = gulp-config.js
+		gulpfile.js = gulpfile.js
 		nuget.config = nuget.config
 		README.md = README.md
 	EndProjectSection
@@ -29,12 +31,98 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{D27C83
 		documentation\images\hackathon.png = documentation\images\hackathon.png
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstrap", "Bootstrap", "{28D883F5-B553-40FB-B745-B2D683CF0538}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Content", "Content", "{AD2A6211-1618-4A30-91DA-44AB4769F0DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{6D98B033-B9AE-40CD-BAB7-8C9D210417DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DI", "DI", "{AF8BE42A-A91E-4DDC-B75A-34D4259FE40A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{94A06195-1AA4-4D77-B38B-CB361E7A80E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ORM", "ORM", "{526187CD-9D55-40D8-A90F-F3D85365340E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Search", "Search", "{78E3C167-099E-4D42-A6DC-3FE2D91E841F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Serialization", "Serialization", "{E419EA70-FCA8-4518-9C75-22E1F48A99ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helixbase.Foundation.Serialization", "src\Foundation\Serialization\code\Helixbase.Foundation.Serialization.csproj", "{4238D5C5-AFD2-4DF5-BF3D-ADB9D46ADC08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helixbase.Foundation.Search", "src\Foundation\Search\code\Helixbase.Foundation.Search.csproj", "{22686DC6-4E6C-4D98-84B7-C48042F5B8FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helixbase.Foundation.ORM", "src\Foundation\ORM\code\Helixbase.Foundation.ORM.csproj", "{5E91A7D9-8E93-44FD-857F-F9CE145B6022}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helixbase.Foundation.Models", "src\Foundation\Models\code\Helixbase.Foundation.Models.csproj", "{3227661F-A60D-486F-A904-14BAF0EB991E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helixbase.Foundation.DI", "src\Foundation\DI\code\Helixbase.Foundation.DI.csproj", "{0D3A6F11-B5FF-4D8C-8A74-19501D2E80D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helixbase.Foundation.Core", "src\Foundation\Core\code\Helixbase.Foundation.Core.csproj", "{0C1E2FEC-AC54-4CF0-905A-890D3BF711D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helixbase.Foundation.Content", "src\Foundation\Content\code\Helixbase.Foundation.Content.csproj", "{F8F55034-FA55-4D27-B115-0AB4EEB9A0A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helixbase.Foundation.Bootstrap", "src\Foundation\Bootstrap\code\Helixbase.Foundation.Bootstrap.csproj", "{44403DB5-5AF0-4BB8-A227-E9A8416947A4}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4238D5C5-AFD2-4DF5-BF3D-ADB9D46ADC08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4238D5C5-AFD2-4DF5-BF3D-ADB9D46ADC08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4238D5C5-AFD2-4DF5-BF3D-ADB9D46ADC08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4238D5C5-AFD2-4DF5-BF3D-ADB9D46ADC08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22686DC6-4E6C-4D98-84B7-C48042F5B8FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22686DC6-4E6C-4D98-84B7-C48042F5B8FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22686DC6-4E6C-4D98-84B7-C48042F5B8FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22686DC6-4E6C-4D98-84B7-C48042F5B8FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E91A7D9-8E93-44FD-857F-F9CE145B6022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E91A7D9-8E93-44FD-857F-F9CE145B6022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E91A7D9-8E93-44FD-857F-F9CE145B6022}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E91A7D9-8E93-44FD-857F-F9CE145B6022}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3227661F-A60D-486F-A904-14BAF0EB991E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3227661F-A60D-486F-A904-14BAF0EB991E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3227661F-A60D-486F-A904-14BAF0EB991E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3227661F-A60D-486F-A904-14BAF0EB991E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D3A6F11-B5FF-4D8C-8A74-19501D2E80D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D3A6F11-B5FF-4D8C-8A74-19501D2E80D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D3A6F11-B5FF-4D8C-8A74-19501D2E80D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D3A6F11-B5FF-4D8C-8A74-19501D2E80D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C1E2FEC-AC54-4CF0-905A-890D3BF711D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C1E2FEC-AC54-4CF0-905A-890D3BF711D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C1E2FEC-AC54-4CF0-905A-890D3BF711D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C1E2FEC-AC54-4CF0-905A-890D3BF711D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8F55034-FA55-4D27-B115-0AB4EEB9A0A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8F55034-FA55-4D27-B115-0AB4EEB9A0A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8F55034-FA55-4D27-B115-0AB4EEB9A0A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8F55034-FA55-4D27-B115-0AB4EEB9A0A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44403DB5-5AF0-4BB8-A227-E9A8416947A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44403DB5-5AF0-4BB8-A227-E9A8416947A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44403DB5-5AF0-4BB8-A227-E9A8416947A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44403DB5-5AF0-4BB8-A227-E9A8416947A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D27C83D2-2EAF-4E44-A1ED-2B3C2EBB5854} = {DAFED8F5-6CBD-4384-AAD6-DC3BCCF24911}
+		{28D883F5-B553-40FB-B745-B2D683CF0538} = {4FDA1DCD-D33E-447E-91C1-F4AE818E2CF0}
+		{AD2A6211-1618-4A30-91DA-44AB4769F0DE} = {4FDA1DCD-D33E-447E-91C1-F4AE818E2CF0}
+		{6D98B033-B9AE-40CD-BAB7-8C9D210417DA} = {4FDA1DCD-D33E-447E-91C1-F4AE818E2CF0}
+		{AF8BE42A-A91E-4DDC-B75A-34D4259FE40A} = {4FDA1DCD-D33E-447E-91C1-F4AE818E2CF0}
+		{94A06195-1AA4-4D77-B38B-CB361E7A80E1} = {4FDA1DCD-D33E-447E-91C1-F4AE818E2CF0}
+		{526187CD-9D55-40D8-A90F-F3D85365340E} = {4FDA1DCD-D33E-447E-91C1-F4AE818E2CF0}
+		{78E3C167-099E-4D42-A6DC-3FE2D91E841F} = {4FDA1DCD-D33E-447E-91C1-F4AE818E2CF0}
+		{E419EA70-FCA8-4518-9C75-22E1F48A99ED} = {4FDA1DCD-D33E-447E-91C1-F4AE818E2CF0}
+		{4238D5C5-AFD2-4DF5-BF3D-ADB9D46ADC08} = {E419EA70-FCA8-4518-9C75-22E1F48A99ED}
+		{22686DC6-4E6C-4D98-84B7-C48042F5B8FC} = {78E3C167-099E-4D42-A6DC-3FE2D91E841F}
+		{5E91A7D9-8E93-44FD-857F-F9CE145B6022} = {526187CD-9D55-40D8-A90F-F3D85365340E}
+		{3227661F-A60D-486F-A904-14BAF0EB991E} = {94A06195-1AA4-4D77-B38B-CB361E7A80E1}
+		{0D3A6F11-B5FF-4D8C-8A74-19501D2E80D4} = {AF8BE42A-A91E-4DDC-B75A-34D4259FE40A}
+		{0C1E2FEC-AC54-4CF0-905A-890D3BF711D5} = {6D98B033-B9AE-40CD-BAB7-8C9D210417DA}
+		{F8F55034-FA55-4D27-B115-0AB4EEB9A0A8} = {AD2A6211-1618-4A30-91DA-44AB4769F0DE}
+		{44403DB5-5AF0-4BB8-A227-E9A8416947A4} = {28D883F5-B553-40FB-B745-B2D683CF0538}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {311DA37D-528B-43B2-A99B-E7253F841D46}
