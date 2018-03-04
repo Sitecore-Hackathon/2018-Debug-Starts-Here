@@ -26,6 +26,8 @@ Our module was developed with the use case of an organization that is in the bus
 
 The application can use text or natural language to ask the user a series of questions or to simply provide guided support.  We have also turned on the `small talk` integration, so the Google Assistant will respond to friendly conversation.  When the user asks simple questions like `how are you doing?`.
 
+The application can be extended to use the stored xDB data to use in website form(Sitecore forms) for personlization.
+
 ## Google Assistant Customizations
 
 Currently our application can be controlled by any device that is a controlled by Google Assistant, which include both voice and textual applications.  A short list of chat devices that will work with our application are included below:
