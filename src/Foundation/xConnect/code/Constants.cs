@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Helixbase.Foundation.xConnect
 {
-    public class Constans
+    public class Constants
     {
         public const string xConnectApiSource = "xConnectApi";
         public const string UserAgent = "Mobile Device";

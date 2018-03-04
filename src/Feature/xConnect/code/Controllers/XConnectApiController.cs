@@ -71,6 +71,7 @@ namespace Helixbase.Feature.xConnect.Controllers
                 if (googleInteractionRequestModel == null || !IsValidEmail(googleInteractionRequestModel.Email))
                 {
                     response = Request.CreateResponse(HttpStatusCode.BadRequest, InvalidInputParametersMessage);
+
                     return response;
                 }
 
@@ -78,6 +79,7 @@ namespace Helixbase.Feature.xConnect.Controllers
                 if (!isContactIdentified)
                 {
                     response = Request.CreateResponse(HttpStatusCode.BadRequest, InvalidContactIdentifiedMessage);
+
                     return response;
                 }
 
@@ -90,6 +92,7 @@ namespace Helixbase.Feature.xConnect.Controllers
                 _xConnectService.RegisterInteraction(googleInteractionRequestModel.Email, googleApiFacetInfo);
 
                 response = Request.CreateResponse(HttpStatusCode.Created);
+
                 return response;
             }
             catch (Exception ex)
@@ -97,6 +100,7 @@ namespace Helixbase.Feature.xConnect.Controllers
                 Log.Error($"Error in XConnectApiController.AddGoogleInteraction(): while adding interaction for contact with email: {googleInteractionRequestModel?.Email}", ex, this);
 
                 response = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, InternalServerErrorMessage);
+
                 return response;
             }
         }
@@ -111,6 +115,7 @@ namespace Helixbase.Feature.xConnect.Controllers
                 if (contactRequestModel == null || !IsValidEmail(contactRequestModel.Email))
                 {
                     response = Request.CreateResponse(HttpStatusCode.BadRequest, InvalidInputParametersMessage);
+
                     return response;
                 }
 
@@ -118,12 +123,14 @@ namespace Helixbase.Feature.xConnect.Controllers
                 if (!isContactIdentified)
                 {
                     response = Request.CreateResponse(HttpStatusCode.BadRequest, InvalidContactIdentifiedMessage);
+
                     return response;
                 }
 
                 ContactModel contactModel = _xConnectService.GetContact(contactRequestModel.Email);
 
                 response = Request.CreateResponse(HttpStatusCode.OK, contactModel);
+
                 return response;
             }
             catch (Exception ex)
@@ -131,6 +138,7 @@ namespace Helixbase.Feature.xConnect.Controllers
                 Log.Error($"Error in XConnectApiController.GetContact(): while getting contact details with email: {contactRequestModel?.Email}", ex, this);
 
                 response = Request.CreateErrorResponse(HttpStatusCode.InternalServerError, InternalServerErrorMessage);
+
                 return response;
             }
         }

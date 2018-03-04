@@ -33,7 +33,7 @@ namespace Helixbase.Foundation.xConnect.Services
             {
                 var identifiers = new ContactIdentifier[]
                 {
-                    new ContactIdentifier(Constans.xConnectApiSource, identifier, ContactIdentifierType.Known )
+                    new ContactIdentifier(Constants.xConnectApiSource, identifier, ContactIdentifierType.Known )
                 };
                 var contact = new Contact(identifiers);
 
@@ -44,7 +44,7 @@ namespace Helixbase.Foundation.xConnect.Services
                 };
                 client.SetFacet<PersonalInformation>(contact, PersonalInformation.DefaultFacetKey, personalInfoFacet);
 
-                var emailFacet = new EmailAddressList(new EmailAddress(identifier, true), Constans.xConnectApiSource);
+                var emailFacet = new EmailAddressList(new EmailAddress(identifier, true), Constants.xConnectApiSource);
                 client.SetFacet<EmailAddressList>(contact, EmailAddressList.DefaultFacetKey, emailFacet);
 
                 client.AddContact(contact);
@@ -60,7 +60,7 @@ namespace Helixbase.Foundation.xConnect.Services
         {
             using (XConnectClient client = GetClient())
             {
-                var contactReference = new IdentifiedContactReference(Constans.xConnectApiSource, identifier);
+                var contactReference = new IdentifiedContactReference(Constants.xConnectApiSource, identifier);
 
                 var contact = client.Get<Contact>(contactReference, new ContactExpandOptions(new string[] { PersonalInformation.DefaultFacetKey }));
                 if (contact == null)
@@ -79,14 +79,14 @@ namespace Helixbase.Foundation.xConnect.Services
         {
             using (XConnectClient client = GetClient())
             {
-                var contactReference = new IdentifiedContactReference(Constans.xConnectApiSource, identifier);
+                var contactReference = new IdentifiedContactReference(Constants.xConnectApiSource, identifier);
 
-                var contact = client.Get<Contact>(contactReference, new ContactExpandOptions(new string[] { PersonalInformation.DefaultFacetKey }));
+                Contact contact = client.Get<Contact>(contactReference, new ContactExpandOptions(new string[] { PersonalInformation.DefaultFacetKey }));
                 if (contact == null)
                     return;
 
                 Interaction interaction = new Interaction(contactReference, InteractionInitiator.Contact,
-                    channelId: new Guid(Constans.Offline_OtherEventChannelId), userAgent: Constans.UserAgent);
+                    channelId: new Guid(Constants.Offline_OtherEventChannelId), userAgent: Constants.UserAgent);
 
                 // Add Custom GoogleApiFacet
                 GoogleApiFacet googleApiFacet = contact.GetFacet<GoogleApiFacet>(GoogleApiFacet.FacetName);
@@ -102,20 +102,12 @@ namespace Helixbase.Foundation.xConnect.Services
 
                 client.SetFacet<GoogleApiFacet>(new FacetReference(contact, GoogleApiFacet.FacetName), googleApiFacet);
 
-                //// Adding some face information
-                //IpInfo ipInfo = new IpInfo("127.0.0.1");
-                //ipInfo.BusinessName = "Home";
-                //client.SetFacet<IpInfo>(interaction, IpInfo.DefaultFacetKey, ipInfo);
-
-                //WebVisit webVisit = new WebVisit();
-                //webVisit.SiteName = "Offline";
-                //client.SetFacet<WebVisit>(interaction, WebVisit.DefaultFacetKey, webVisit);
-
-                Outcome outcome = new Outcome(new Guid(Constans.Offline_OtherEventChannelId), DateTime.UtcNow, "USD", 0)
+                Outcome outcome = new Outcome(new Guid(Constants.Offline_OtherEventChannelId), DateTime.UtcNow, "USD", 0)
                 {
                     EngagementValue = 10,
                     Text = "Google Api Interaction"
                 };
+
                 interaction.Events.Add(outcome);
 
                 client.AddInteraction(interaction);
@@ -135,9 +127,9 @@ namespace Helixbase.Foundation.xConnect.Services
 
             using (XConnectClient client = GetClient())
             {
-                var contactReference = new IdentifiedContactReference(Constans.xConnectApiSource, identifier);
+                var contactReference = new IdentifiedContactReference(Constants.xConnectApiSource, identifier);
 
-                var contact = client.Get<Contact>(contactReference, new ContactExpandOptions(new string[] { PersonalInformation.DefaultFacetKey }));
+                Contact contact = client.Get<Contact>(contactReference, new ContactExpandOptions(new string[] { PersonalInformation.DefaultFacetKey }));
                 if (contact == null)
                     return result;
 
@@ -177,7 +169,9 @@ namespace Helixbase.Foundation.xConnect.Services
             var certificateModifier = new CertificateWebRequestHandlerModifier(options);
 
             List<IHttpClientModifier> clientModifiers = new List<IHttpClientModifier>();
+
             var timeoutClientModifier = new TimeoutHttpClientModifier(new TimeSpan(0, 0, 20));
+
             clientModifiers.Add(timeoutClientModifier);
 
             // This overload takes three client end points - collection, search, and configuration
