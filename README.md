@@ -12,8 +12,8 @@ This is our submission for the 2018 Hackathon in the `xConnect` category.
 
 ## Quick Links
 
-1. [Installation Steps](https://github.com/Sitecore-Hackathon/2018-Debug-Starts-Here/tree/master/documentation/Readme.md)
-2. YouTube Video
+1. [Installation Steps](https://github.com/Sitecore-Hackathon/2018-Debug-Starts-Here/tree/master/documentation/Readme.md#Installation)
+2. [YouTube Video](https://youtu.be/Yrc4WEUzb5k)
 3. [Bot Demo Page](https://bot.dialogflow.com/823e37ff-493e-4757-ad82-d59916e99e55)
 
 ## Purpose
@@ -22,9 +22,9 @@ The purpose of this xConnect integration, is to pass data collected from the use
 
 ## Use Case
 
-Our module was developed with the use case of an organization that is in the business of taking food orders typically via it's website (such as GrubHub or Delivery Dudes).  This application extends that functionality, allowing for new channels to take a customers order automatically, but still bringing that transaction data back into Sitecore for personalization.  We created custom facets that the user has filled in, from the Google Assistant.  When a user goes onto their phone, and says `Start Sitecore Hackathon` that triggers a action within Google Assistant to trigger our application.
+Our module was developed with the use case of an organization that is in the business of taking food orders typically via it's website (such as GrubHub or Delivery Dudes).  This application extends that functionality, allowing for new channels to take a customers order automatically, but still bringing that transaction data back into Sitecore for personalization.  We created custom facets that the user has filled in, from the Google Assistant.  When a user goes onto their phone, and says `Start Sitecore Hackathon` that triggers an action within Google Assistant to trigger our application.
 
-The application can use text or natural language to ask the user a series of questions.  We have also turned on the `small talk` integration, so the Google Assistant will respond to friendly conversation.  When the user asks
+The application can use text or natural language to ask the user a series of questions or to simply provide guided support.  We have also turned on the `small talk` integration, so the Google Assistant will respond to friendly conversation.  When the user asks simple questions like `how are you doing?`.
 
 ## Google Assistant Customizations
 
@@ -45,9 +45,11 @@ To customize the current setup, you can pull the source from `[scWebRoot]\google
 
 ![Import Agent](https://i.imgur.com/olb5xiL.png)
 
+Then you can begin to use the `DialogFlow` easy to use interface to begin making customizations to communication from the user to the application.  In addition to these customizations, you can configure entities in 
+
 ## Future Enhancements
 
 This Google Assistant application to xConnect opens a lot of possibilities to interact with a customer in a natural way, while still collecting information about the user which can ultimately be brought back into Sitecore for personalization engagement purposes.
 
-- Customer Support Feature Rich Application to help customers solve their problems, but to also bring that data back into xDb for customer engagment purposes.
-- The use of the Marketing Automation Suite in Sitecore 9, to trigger interactions with the client based on events triggered on the website.
+- Customer Support Application to help customers solve their problems, but to also bring that data back into xDb for customer engagment purposes.
+- The use of the Marketing Automation Suite in Sitecore 9, to trigger interactions with the client via Google Home or Assistant, based on events triggered on the website.
